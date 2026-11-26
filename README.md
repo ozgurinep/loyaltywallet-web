@@ -2,12 +2,6 @@
 
 > Müşteri sadakat sisteminin, percentile tabanlı RFM segmentasyonunun ve zaman serisi gelir analizlerinin istemci tarafında (frontend-only) çalışan modern web uygulaması.
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
-[![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)](#)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38bdf8)](#)
-[![React](https://img.shields.io/badge/React-19-61dafb)](#)
-[![Tests](https://img.shields.io/badge/Vitest-17%2F17%20passing-green)](#)
-
 ---
 
 ## 🌟 Proje Özeti
@@ -20,8 +14,8 @@ Tüm veriler tamamen tarayıcı üzerinde (`LocalStorage`) tutulur; herhangi bir
 
 ## 🚀 Canlı Demo
 
-* **Canlı Yayın (Netlify):** [https://loyaltywallet-lite.netlify.app](https://loyaltywallet-lite.netlify.app) *(Deploy sonrası aktif bağlantı)*
-* **Kaynak Kod (GitHub):** [https://github.com/](https://github.com/)
+* **Canlı Yayın (Netlify):** [https://loyaltywallet-web.netlify.app](https://loyaltywallet-web.netlify.app)
+* **Kaynak Kod (GitHub):** [https://github.com/ozgurinep/loyaltywallet-web](https://github.com/ozgurinep/loyaltywallet-web)
 
 ---
 
@@ -52,8 +46,8 @@ Aylık ciro ve 3 aylık hareketli ortalama ($MA$) çizgisi, kategori kırılıml
   - İlişkisel silme güvencesi (Bir müşteri silindiğinde o müşteriye ait tüm işlemler otomatik silinir ve kullanıcı önceden bilgilendirilir).
   - Çok kriterli filtreleme: Ad/e-posta/telefon araması, şehir, kategori, segment, tarih aralığı, min-maks tutar.
 - **Percentile Tabanlı RFM Segmentasyonu:**
-  - $p = \frac{\text{küçük} + 0.5 \times \text{eşit}}{n}$ formülüyle adil yüzdelik dilimleme.
-  - Recency ters çevrimi ($R = 6 - \text{score}$).
+  - p = \frac{\text{küçük} + 0.5 \times \text{eşit}}{n} formülüyle adil yüzdelik dilimleme.
+  - Recency ters çevrimi (R = 6 - \text{score}).
   - Müşterileri 6 gruba ayırma: *Şampiyonlar, Sadık, Potansiyel, İlgi Bekleyen, Risk Altında, Kayıp*.
 - **Zaman Serisi & Trend Analizleri:**
   - Aylık ciro toplama ve 3 aylık hareketli ortalama ($3M\ MA$).
@@ -70,18 +64,18 @@ Aylık ciro ve 3 aylık hareketli ortalama ($MA$) çizgisi, kategori kırılıml
 ## 📐 RFM Yöntemi ve Segment Kuralları
 
 RFM analizi, müşterilerin son 365 gün içindeki davranışlarını değerlendirir:
-- **Recency ($R$):** Referans tarihten bu yana geçen gün sayısı (az gün = yüksek puan).
-- **Frequency ($F$):** Pencere içindeki toplam işlem sayısı (çok işlem = yüksek puan).
-- **Monetary ($M$):** Pencere içindeki toplam harcama tutarı.
+- **Recency (R):** Referans tarihten bu yana geçen gün sayısı (az gün = yüksek puan).
+- **Frequency (F):** Pencere içindeki toplam işlem sayısı (çok işlem = yüksek puan).
+- **Monetary (M):** Pencere içindeki toplam harcama tutarı.
 
 | Segment | Türkçe Karşılığı | Kural | Açıklama |
 |---|---|---|---|
-| **Champions** | Şampiyonlar | $R \ge 4$ ve $F \ge 4$ | En yakın zamanda ve en sık gelen, en değerli kitle |
-| **Loyal** | Sadık | $R \ge 3$ ve $F \ge 3$ | Düzenli alışveriş yapan, bağlı kitle |
-| **Potential** | Potansiyel | $R \ge 4$ ve $F \le 2$ | Yakın zamanda gelmiş ancak henüz işlem sıklığı düşük olanlar |
-| **NeedAttention** | İlgi Bekleyen | $R = 3$ ve $F \le 2$ | Orta vadede gelmiş, yeniden kazanım hamlesi gerekenler |
-| **AtRisk** | Risk Altında | $R \le 2$ ve $F \ge 3$ | Eskiden sık gelen ancak son dönemde uzaklaşmış müşteriler |
-| **Lost** | Kayıp | $R \le 2$ ve $F \le 2$ | Uzun süredir gelmeyen ve seyrek işlem yapmış terk edilmiş kitle |
+| **Champions** | Şampiyonlar | En yakın zamanda ve en sık gelen, en değerli kitle 
+| **Loyal** | Sadık | Düzenli alışveriş yapan, bağlı kitle 
+| **Potential** | Potansiyel | Yakın zamanda gelmiş ancak henüz işlem sıklığı düşük olanlar 
+| **NeedAttention** | İlgi Bekleyen | Orta vadede gelmiş, yeniden kazanım hamlesi gerekenler 
+| **AtRisk** | Risk Altında | Eskiden sık gelen ancak son dönemde uzaklaşmış müşteriler 
+| **Lost** | Kayıp | Uzun süredir gelmeyen ve seyrek işlem yapmış terk edilmiş kitle
 
 ---
 
@@ -160,7 +154,7 @@ Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyi
 
 ```bash
 # 1. Depoyu klonlayın
-git clone https://github.com/<kullanici-adi>/loyaltywallet-web.git
+git clone https://github.com/ozgurinep/loyaltywallet-web.git
 cd loyaltywallet-web
 
 # 2. Bağımlılıkları yükleyin
