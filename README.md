@@ -14,7 +14,7 @@ Tüm veriler tamamen tarayıcı üzerinde (`LocalStorage`) tutulur; herhangi bir
 
 ## 🚀 Canlı Demo
 
-* **Canlı Yayın (Netlify):** [https://loyaltywallet-web.netlify.app](https://loyaltywallet-web.netlify.app)
+* **Canlı Yayın (Vercel):** [https://loyaltywallet-web.vercel.app](https://loyaltywallet-web.vercel.app)
 * **Kaynak Kod (GitHub):** [https://github.com/ozgurinep/loyaltywallet-web](https://github.com/ozgurinep/loyaltywallet-web)
 
 ---
